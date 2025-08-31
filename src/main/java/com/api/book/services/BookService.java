@@ -41,8 +41,8 @@ public class BookService {
 	
 	
 	public Book addBook(Book b) {
-		Book res=this.bookRepository.save(b);
-		return res;
+		b.setId(0);
+		return this.bookRepository.save(b);
 		
 	}
 	

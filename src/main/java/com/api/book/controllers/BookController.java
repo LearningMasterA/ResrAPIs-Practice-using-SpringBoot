@@ -50,7 +50,7 @@ public class BookController {
 		if(book==null) {
 			ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
-		return ResponseEntity.of(Optional.of(book));
+		return ResponseEntity.ok(book);
 	} 
 	
 	@PostMapping("/books")
@@ -78,10 +78,10 @@ public class BookController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 	}
-	@DeleteMapping("/books")
-	public void deleteBook() {
-		this.bookService.deleteBook();
-	}
+//	@DeleteMapping("/books")
+//	public void deleteBook() {
+//		this.bookService.deleteBook();
+//	}
 	
 	@PutMapping("/books/{id}")
 	public ResponseEntity<Book> updateBook(@RequestBody Book book,@PathVariable("id") int id) {
